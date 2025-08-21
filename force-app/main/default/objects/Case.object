@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ServiceNow_Incident_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>sys_id (similar to the salesforce record Id) from the service now response</description>
+        <externalId>true</externalId>
+        <label>ServiceNow Incident Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceNow_Incident_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+    ISBLANK(ServiceNow_Incident_Id__c),
+    &quot;&quot;,
+    &quot;https://your_instance_name.service-now.com/nav_to.do?uri=incident.do?sys_id=&quot; &amp; ServiceNow_Incident_Id__c
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ServiceNow Incident Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>
