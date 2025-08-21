@@ -14,14 +14,14 @@ public with sharing class CaseToServiceNowQueueable implements Queueable, Databa
       WHERE Id IN :caseIds
     ];
 
-    for (Case case : casesToSend) {
+    for (Case cs : casesToSend) {
       response = ServiceNowApiHandler.createIncident(
-        generateIncidentBody(case.Subject, case.CaseNumber, case.Description)
+        generateIncidentBody(cs.Subject, cs.CaseNumber, cs.Description)
       );
 
       if (response.get('result') != null) {
         result = (Map<String, Object>) response.get('result');
-        case.ServiceNow_Incident_Id__c = String.valueOf(result.get('sys_id'));
+        cs.ServiceNow_Incident_Id__c = String.valueOf(result.get('sys_id'));
       }
     }
 
