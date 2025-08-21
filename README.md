@@ -53,7 +53,7 @@ Whenever a **Case** is created in Salesforce, a corresponding **Incident (INC)**
    6. Token Endpoint URL → ***https://<your_instance_name>.service-now.com/oauth_token.do***  
    7. Use Proof Key for Code Exchange (PKCE) Extension → ***Checked***
 
-   ![Ext. Identity Auth Provider](/Images/External_Identity_Auth_Provider.png)
+   ![Ext. Identity Auth Provider](images/External_Identity_Auth_Provider.png)
 
 3. After saving, a **Callback URL** will be generated in the External Auth Identity Provider.  
    - Copy this URL and update it in the **ServiceNow OAuth application's Redirect URL**.
