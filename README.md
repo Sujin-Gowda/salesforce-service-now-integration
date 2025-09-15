@@ -119,4 +119,4 @@ Whenever a **Case** is created in Salesforce, a corresponding **Incident (INC)**
 
 Sample code is written to demonstrate creation of an incident in ServiceNow upon a Case creation in Salesforce
 
-[The Metadata](./force-app/main/default)
+[The sample code](./force-app/main/default)
